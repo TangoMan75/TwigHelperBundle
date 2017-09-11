@@ -1,0 +1,7 @@
+services:
+    twig_extension.tangoman_menu:
+        class: TangoMan\TwigHelperBundle\Twig\Extension\TwigHelperExtension
+        public: false
+        arguments: ["@twig"]
+        tags:
+            - { name: twig.extension }

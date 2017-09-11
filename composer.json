@@ -1,0 +1,34 @@
+{
+	"name": "tangoman/twig-helper-bundle",
+	"description": "Symfony TwigHelper Twig Extension Bundle",
+	"version": "1.0.0",
+	"type": "symfony-bundle",
+	"keywords": [
+		"TwigHelper",
+		"Symfony",
+		"Twig",
+		"Extension",
+		"Service",
+		"Bundle",
+		"TangoMan"
+	],
+	"licence": "GNU",
+	"authors": [
+		{
+			"name": "Matthias Morin",
+			"email": "tangoman@free.fr"
+		}
+	],
+	"require": {
+		"php"                      : ">=5.4.0",
+		"symfony/framework-bundle" : "~2.3|~3.0",
+		"twig/twig"                : "~1.12|~2",
+	},
+	"autoload": {
+		"psr-4": {
+			"TangoMan\\TwigHelperBundle\\": ""
+		}
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true
+}
