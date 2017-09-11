@@ -1,5 +1,5 @@
 services:
-    twig_extension.tangoman_menu:
+    twig_extension.tangoman_twig_helper:
         class: TangoMan\TwigHelperBundle\Twig\Extension\TwigHelperExtension
         public: false
         arguments: ["@twig"]
