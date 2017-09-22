@@ -33,7 +33,7 @@ class TwigHelperExtension extends \Twig_Extension
     public function getFunctions()
     {
         return [
-            new \Twig_SimpleFunction('multi_start_with', [$this, 'multiStartWithFunction']),
+            new \Twig_SimpleFunction('start_with', [$this, 'startWithFunction']),
         ];
     }
 
@@ -45,7 +45,7 @@ class TwigHelperExtension extends \Twig_Extension
      *
      * @return bool
      */
-    public function multiStartWithFunction($needle, $haystack = [])
+    public function startWithFunction($needle, $haystack = [])
     {
         if ($haystack == []) {
             return true;
