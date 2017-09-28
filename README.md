@@ -51,8 +51,10 @@ Step 3: Use in twig
 -------------------
 
 ```twig
-{% if start_with(app.request.attributes.get('_route'), item.pages ?? []) %}
-    {{ item }}
+{% if is_granted(app.user.roles, item.roles ?? ['IS_AUTHENTICATED_ANONYMOUSLY']) %}
+    {% if multi_start_with(app.request.attributes.get('_route'), item.pages ?? []) %}
+        {{ item }}
+    {% endif %}
 {% endif %}
 ```
 
