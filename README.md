@@ -47,14 +47,69 @@ class AppKernel extends Kernel
 }
 ```
 
-Step 3: Use in twig
--------------------
+Availlable functions
+====================
+
+start_with
+----------
+
+Checks if at least one item from haystack starts with needle.
 
 ```twig
-{% if is_granted(app.user.roles, item.roles ?? ['IS_AUTHENTICATED_ANONYMOUSLY']) %}
-    {% if multi_start_with(app.request.attributes.get('_route'), item.pages ?? []) %}
-        {{ item }}
-    {% endif %}
+{% if start_with(app.request.attributes.get('_route'), item.pages ?? []) %}
+    {{ item }}
+{% endif %}
+```
+
+end_with
+--------
+
+Checks if at least one item from haystack ends with needle.
+
+```twig
+{% if end_with(app.request.attributes.get('_route'), ['index','list']) %}
+    {{ item }}
+{% endif %}
+```
+
+is_numeric
+----------
+
+Finds whether a variable is a number or a numeric string.
+
+```twig
+{% if is_numeric(item) %}
+    {{ item }}
+{% else %}
+    "{{ item }}"
+{% endif %}
+```
+
+is_string
+---------
+
+Find whether the type of a variable is string.
+
+```twig
+{% if is_string(user) %}
+    Welcome {{ user }} !
+{% else %}
+    Are you kidding me ? Is "{{ user }}" even a name ?
+{% endif %}
+```
+
+Availlable filters
+==================
+
+to_array
+--------
+
+Converts stdObject or json string to traversable array.
+
+```twig
+{% for key, value in object|to_array %}
+    <td>{{ key }}</td>
+    <td>{{ value }}</td>
 {% endif %}
 ```
 
@@ -68,8 +123,8 @@ License
 
 Copyrights (c) 2017 Matthias Morin
 
-[![License][license-GPL]][license-url]
-Distributed under the GPLv3.0 license.
+[![License][license-MIT]][license-url]
+Distributed under the MIT license.
 
 If you like **TangoMan TwigHelper Bundle** please star!
 And follow me on GitHub: [TangoMan75](https://github.com/TangoMan75)
