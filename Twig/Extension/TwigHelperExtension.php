@@ -35,8 +35,8 @@ class TwigHelperExtension extends \Twig_Extension
         return [
             new \Twig_SimpleFunction('start_with', [$this, 'startWithFunction']),
             new \Twig_SimpleFunction('end_with', [$this, 'endWithFunction']),
-            new \Twig_SimpleFunction('is_string', [$this, 'isStringFunction']),
             new \Twig_SimpleFunction('is_numeric', [$this, 'isNumericFunction']),
+            new \Twig_SimpleFunction('is_string', [$this, 'isStringFunction']),
         ];
     }
 
@@ -51,41 +51,26 @@ class TwigHelperExtension extends \Twig_Extension
     }
 
     /**
-     * Find whether the type of a variable is string
+     * Checks if at least one item from haystack starts with needle
      *
-     * @param $var
-     *
-     * @return bool
-     */
-    public function isStringFunction($var)
-    {
-        return is_string($var);
-    }
-
-    /**
-     * Finds whether a variable is a number or a numeric string
-     *
-     * @param $var
+     * @param string $needle
+     * @param array  $haystack
      *
      * @return bool
      */
-    public function isNumericFunction($var)
+    public function startWithFunction($needle, $haystack = [])
     {
-        return is_numeric($var);
-    }
-
-    /**
-     * Converts stdObject or json string to array
-     *
-     * @return array
-     */
-    public function toArrayFunction($object)
-    {
-        if (is_string($object)) {
-            return json_decode($object, true);
+        if (in_array($needle, $haystack)) {
+            return true;
+        } else {
+            foreach ($haystack as $item) {
+                if (strpos($needle, $item) === 0) {
+                    return true;
+                }
+            }
         }
 
-        return json_decode(json_encode($object), true);
+        return false;
     }
 
     /**
@@ -98,10 +83,6 @@ class TwigHelperExtension extends \Twig_Extension
      */
     public function endWithFunction($needle, $haystack = [])
     {
-        if ($haystack == []) {
-            return true;
-        }
-
         if (in_array($needle, $haystack)) {
             return true;
         } else {
@@ -117,29 +98,40 @@ class TwigHelperExtension extends \Twig_Extension
     }
 
     /**
-     * Checks if at least one item from haystack starts with needle
+     * Finds whether a variable is a number or a numeric string
      *
-     * @param string $needle
-     * @param array  $haystack
+     * @param $var
      *
      * @return bool
      */
-    public function startWithFunction($needle, $haystack = [])
+    public function isNumericFunction($var)
     {
-        if ($haystack == []) {
-            return true;
+        return is_numeric($var);
+    }
+
+    /**
+     * Find whether the type of a variable is string
+     *
+     * @param $var
+     *
+     * @return bool
+     */
+    public function isStringFunction($var)
+    {
+        return is_string($var);
+    }
+
+    /**
+     * Converts stdObject or json string to traversable array
+     *
+     * @return array
+     */
+    public function toArrayFunction($object)
+    {
+        if (is_string($object)) {
+            return json_decode($object, true);
         }
 
-        if (in_array($needle, $haystack)) {
-            return true;
-        } else {
-            foreach ($haystack as $item) {
-                if (strpos($needle, $item) === 0) {
-                    return true;
-                }
-            }
-        }
-
-        return false;
+        return json_decode(json_encode($object), true);
     }
 }
