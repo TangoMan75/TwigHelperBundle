@@ -1,33 +1,33 @@
 {
-	"name": "tangoman/twig-helper-bundle",
-	"description": "Symfony TwigHelper Twig Extension Bundle",
-	"version": "1.0.0",
-	"type": "symfony-bundle",
-	"keywords": [
-		"TwigHelper",
-		"Symfony",
-		"Twig",
-		"Extension",
-		"Service",
-		"Bundle",
-		"TangoMan"
-	],
-	"licence": "MIT",
-	"authors": [
-		{
-			"name": "Matthias Morin",
-			"email": "matthias.morin@gmail.com"
-		}
-	],
-	"require": {
-		"php" : ">=5.4.0",
-		"twig/twig": "~1.12|~2"
-	},
-	"autoload": {
-		"psr-4": {
-			"TangoMan\\TwigHelperBundle\\": ""
-		}
-	},
-	"minimum-stability": "dev",
-	"prefer-stable": true
+    "name": "tangoman/twig-helper-bundle",
+    "description": "Symfony TwigHelper Twig Extension Bundle",
+    "version": "1.0.0",
+    "type": "symfony-bundle",
+    "keywords": [
+        "TwigHelper",
+        "Symfony",
+        "Twig",
+        "Extension",
+        "Service",
+        "Bundle",
+        "TangoMan"
+    ],
+    "licence": "MIT",
+    "authors": [
+        {
+            "name": "Matthias Morin",
+            "email": "matthias.morin@gmail.com"
+        }
+    ],
+    "require": {
+        "php" : ">=5.4.0",
+        "twig/twig": "~1.12|~2"
+    },
+    "autoload": {
+        "psr-4": {
+            "TangoMan\\TwigHelperBundle\\": ""
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
