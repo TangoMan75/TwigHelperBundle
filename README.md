@@ -130,7 +130,7 @@ If you like **TangoMan TwigHelper Bundle** please star!
 And follow me on GitHub: [TangoMan75](https://github.com/TangoMan75)
 ... And check my other cool projects.
 
-[tangoman.free.fr](http://tangoman.free.fr)
+[Matthias Morin | LinkedIn](https://www.linkedin.com/in/morinmatthias)
 
 [license-GPL]: https://img.shields.io/badge/Licence-GPLv3.0-green.svg
 [license-MIT]: https://img.shields.io/badge/Licence-MIT-green.svg
