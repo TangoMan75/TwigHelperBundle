@@ -1,7 +1,7 @@
 {
     "name": "tangoman/twig-helper-bundle",
     "description": "Symfony TwigHelper Twig Extension Bundle",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "type": "symfony-bundle",
     "keywords": [
         "TwigHelper",
