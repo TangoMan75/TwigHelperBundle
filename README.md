@@ -1,7 +1,7 @@
 TangoMan TwigHelper Bundle
 ====================
 
-**TangoMan TwigHelper Bundle** provides functions for twig.
+**TangoMan TwigHelper Bundle** provides a collection of useful twig functions.
 
 Installation
 ============
@@ -53,6 +53,8 @@ Availlable functions
 start_with
 ----------
 
+(deprecated, since twig 3x handles this one just fine)
+
 Checks if at least one item from haystack starts with needle.
 
 ```twig
@@ -63,6 +65,9 @@ Checks if at least one item from haystack starts with needle.
 
 end_with
 --------
+
+(deprecated, since twig 3x handles this one just fine)
+
 
 Checks if at least one item from haystack ends with needle.
 
@@ -121,7 +126,7 @@ If you find any bug please report here : [Issues](https://github.com/TangoMan75/
 License
 =======
 
-Copyright (c) 2018 Matthias Morin
+Copyright (c) 2020 Matthias Morin
 
 [![License][license-MIT]][license-url]
 Distributed under the MIT license.
